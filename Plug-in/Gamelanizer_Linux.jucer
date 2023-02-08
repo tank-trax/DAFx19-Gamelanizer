@@ -78,101 +78,47 @@
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <VS2017 targetFolder="Builds/VisualStudio2017">
-      <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" targetName="Gamelanizer - Debug"/>
-        <CONFIGURATION isDebug="0" name="Release" targetName="Gamelanizer"/>
-        <CONFIGURATION isDebug="0" name="Release - MKL" targetName="Gamelanizer" libraryPath="C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows\mkl\lib\intel64&#10;"
-                       headerPath="C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows\mkl\include"
-                       userNotes="If you want to build with MKL's FFT, set the flag in the juce_dsp module. Make sure the search paths above are correct for your MKL installation. Copy these next lines to the &quot;External Libraries to Link&quot; field. Finally, build with this configuration.&#10;&#10;mkl_intel_ilp64.lib&#10;mkl_sequential.lib&#10;mkl_core.lib"/>
-      </CONFIGURATIONS>
-      <MODULEPATHS>
-        <MODULEPATH id="juce_opengl"/>
-        <MODULEPATH id="juce_gui_extra"/>
-        <MODULEPATH id="juce_gui_basics"/>
-        <MODULEPATH id="juce_graphics"/>
-        <MODULEPATH id="juce_events"/>
-        <MODULEPATH id="juce_dsp"/>
-        <MODULEPATH id="juce_data_structures"/>
-        <MODULEPATH id="juce_cryptography"/>
-        <MODULEPATH id="juce_core"/>
-        <MODULEPATH id="juce_audio_utils"/>
-        <MODULEPATH id="juce_audio_processors"/>
-        <MODULEPATH id="juce_audio_plugin_client"/>
-        <MODULEPATH id="juce_audio_formats"/>
-        <MODULEPATH id="juce_audio_devices"/>
-        <MODULEPATH id="juce_audio_basics"/>
-      </MODULEPATHS>
-    </VS2017>
-    <XCODE_MAC targetFolder="Builds/MacOSX" extraDefs="MKLROOT=/opt/intel/compilers_and_libraries_2019.4.233/mac/mkl"
-               extraCompilerFlags="-DMKL_ILP64 -m64 -I${MKLROOT}/include" extraLinkerFlags="${MKLROOT}/lib/libmkl_intel_ilp64.a&#10;${MKLROOT}/lib/libmkl_sequential.a&#10;${MKLROOT}/lib/libmkl_core.a -lpthread -lm -ldl">
-      <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" osxArchitecture="64BitIntel" targetName="Gamelanizer - Debug"/>
-        <CONFIGURATION isDebug="0" name="Release" osxArchitecture="64BitIntel" targetName="Gamelanizer"/>
-        <CONFIGURATION name="Release - MKL" osxArchitecture="64BitIntel" targetName="Gamelanizer"
-                       headerPath="/opt/intel/compilers_and_libraries_2019.4.233/mac/mkl/include"
-                       libraryPath="/opt/intel/compilers_and_libraries_2019.4.233/mac/mkl/lib"
-                       osxCompatibility="10.12 SDK" macOSDeploymentTarget="10.12"/>
-      </CONFIGURATIONS>
-      <MODULEPATHS>
-        <MODULEPATH id="juce_opengl" path="../../juce"/>
-        <MODULEPATH id="juce_gui_extra" path="../../juce"/>
-        <MODULEPATH id="juce_gui_basics" path="../../juce"/>
-        <MODULEPATH id="juce_graphics" path="../../juce"/>
-        <MODULEPATH id="juce_events" path="../../juce"/>
-        <MODULEPATH id="juce_dsp" path="../../juce"/>
-        <MODULEPATH id="juce_data_structures" path="../../juce"/>
-        <MODULEPATH id="juce_cryptography" path="../../juce"/>
-        <MODULEPATH id="juce_core" path="../../juce"/>
-        <MODULEPATH id="juce_audio_utils" path="../../juce"/>
-        <MODULEPATH id="juce_audio_processors" path="../../juce"/>
-        <MODULEPATH id="juce_audio_plugin_client" path="../../juce"/>
-        <MODULEPATH id="juce_audio_formats" path="../../juce"/>
-        <MODULEPATH id="juce_audio_devices" path="../../juce"/>
-        <MODULEPATH id="juce_audio_basics" path="../../juce"/>
-      </MODULEPATHS>
-    </XCODE_MAC>
     <LINUX_MAKE targetFolder="Builds/LinuxMakefile" extraCompilerFlags="-DJUCE_DISPLAY_SPLASH_SCREEN=0 -DJUCE_REPORT_APP_USAGE=0 -DLINUX=1">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" enablePluginBinaryCopyStep="0"/>
         <CONFIGURATION isDebug="0" name="Release" enablePluginBinaryCopyStep="0"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_audio_basics" path="../../juce"/>
-        <MODULEPATH id="juce_audio_devices" path="../../juce"/>
-        <MODULEPATH id="juce_audio_formats" path="../../juce"/>
-        <MODULEPATH id="juce_audio_plugin_client" path="../../juce"/>
-        <MODULEPATH id="juce_audio_processors" path="../../juce"/>
-        <MODULEPATH id="juce_audio_utils" path="../../juce"/>
-        <MODULEPATH id="juce_core" path="../../juce"/>
-        <MODULEPATH id="juce_cryptography" path="../../juce"/>
-        <MODULEPATH id="juce_data_structures" path="../../juce"/>
-        <MODULEPATH id="juce_dsp" path="../../juce"/>
-        <MODULEPATH id="juce_events" path="../../juce"/>
-        <MODULEPATH id="juce_graphics" path="../../juce"/>
-        <MODULEPATH id="juce_gui_basics" path="../../juce"/>
-        <MODULEPATH id="juce_gui_extra" path="../../juce"/>
-        <MODULEPATH id="juce_opengl" path="../../juce"/>
+        <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../JUCE/modules"/>
       </MODULEPATHS>
     </LINUX_MAKE>
   </EXPORTFORMATS>
   <MODULES>
-    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
-            useGlobalPath="1"/>
-    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+            useGlobalPath="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
   </MODULES>
   <LIVE_SETTINGS>
     <WINDOWS/>
