@@ -225,8 +225,8 @@ void GamelanizerAudioProcessor::processBlock(AudioBuffer<float>& buffer, MidiBuf
 }
 
 void GamelanizerAudioProcessor::processSamples(const int64 numSamples, const float* monoInputRead,
-                                               float** multiOutWrite, float* baseDelayBufferReadWrite,
-                                               float** levelsBufferReadWrite, const bool skipProcessing)
+                                               float* const* multiOutWrite, float* baseDelayBufferReadWrite,
+                                               float* const* levelsBufferReadWrite, const bool skipProcessing)
 {
 #if MeasurePerformance
     const auto startingTime = PerformanceMeasures::getNewStartingTime();

@@ -94,19 +94,19 @@ private:
     //==============================================================================
     typedef SmoothedValue<float, ValueSmoothingTypes::Linear> SmoothFloat;
 
-    std::array<float*, GamelanizerConstants::maxLevels + 1> gainParamRawPointers{};
+    std::array<std::atomic<float>*, GamelanizerConstants::maxLevels + 1> gainParamRawPointers{};
     std::array<SmoothFloat, GamelanizerConstants::maxLevels + 1> gainsSmooth{};
 
-    std::array<float*, GamelanizerConstants::maxLevels + 1> panParamRawPointers{};
+    std::array<std::atomic<float>*, GamelanizerConstants::maxLevels + 1> panParamRawPointers{};
     std::array<SmoothFloat, GamelanizerConstants::maxLevels + 1> pansSmooth{};
 
-    std::array<float*, GamelanizerConstants::maxLevels + 1> muteParamRawPointers{};
+    std::array<std::atomic<float>*, GamelanizerConstants::maxLevels + 1> muteParamRawPointers{};
     std::array<SmoothFloat, GamelanizerConstants::maxLevels + 1> mutesSmooth{};
 
-    std::array<float*, GamelanizerConstants::maxLevels> taperParamRawPointers{};
+    std::array<std::atomic<float>*, GamelanizerConstants::maxLevels> taperParamRawPointers{};
     std::array<SmoothFloat, GamelanizerConstants::maxLevels> tapersSmooth{};
 
-    std::array<float*, GamelanizerConstants::maxLevels> pitchParamRawPointers{};
+    std::array<std::atomic<float>*, GamelanizerConstants::maxLevels> pitchParamRawPointers{};
     std::array<SmoothFloat, GamelanizerConstants::maxLevels> pitchesSmooth{};
     std::array<float, GamelanizerConstants::maxLevels> pitchesPrevious{};
     //==============================================================================
@@ -116,17 +116,17 @@ private:
      */
     static constexpr int filterUpdateRateInSamples{32};
 
-    std::array<float*, GamelanizerConstants::maxLevels> lpfParamRawPointers{};
+    std::array<std::atomic<float>*, GamelanizerConstants::maxLevels> lpfParamRawPointers{};
     std::array<SmoothFloat, GamelanizerConstants::maxLevels> lpfSmooth{};
     std::array<float, GamelanizerConstants::maxLevels> lpfPrevious{};
     std::array<int, GamelanizerConstants::maxLevels> lpfSamplesSinceChange{};
 
-    std::array<float*, GamelanizerConstants::maxLevels> hpfParamRawPointers{};
+    std::array<std::atomic<float>*, GamelanizerConstants::maxLevels> hpfParamRawPointers{};
     std::array<SmoothFloat, GamelanizerConstants::maxLevels> hpfSmooth{};
     std::array<float, GamelanizerConstants::maxLevels> hpfPrevious{};
     std::array<int, GamelanizerConstants::maxLevels> hpfSamplesSinceChange{};
     //==============================================================================
-    std::array<std::array<float*, 4>, GamelanizerConstants::maxLevels> dropParamRawPointers{};
+    std::array<std::array<std::atomic<float>*, 4>, GamelanizerConstants::maxLevels> dropParamRawPointers{};
     //==============================================================================
     JUCE_LEAK_DETECTOR(GamelanizerParametersVtsHelper)
 };

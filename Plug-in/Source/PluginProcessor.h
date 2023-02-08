@@ -258,8 +258,8 @@ private:
      * \param levelsBufferReadWrite Write pointers to #SubdivisionLevelsOutputBuffer::data
      * \param skipProcessing If true, skip intense processing in order to get the buffer position states correct
      */
-    void processSamples(int64 numSamples, const float* monoInputRead, float** multiOutWrite,
-                        float* baseDelayBufferReadWrite, float** levelsBufferReadWrite, bool skipProcessing);
+    void processSamples(int64 numSamples, const float* monoInputRead, float* const* multiOutWrite,
+                        float* baseDelayBufferReadWrite, float* const* levelsBufferReadWrite, bool skipProcessing);
 
     //==============================================================================
     /**

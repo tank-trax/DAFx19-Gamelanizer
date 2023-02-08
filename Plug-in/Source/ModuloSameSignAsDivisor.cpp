@@ -25,7 +25,7 @@
 
 float ModuloSameSignAsDivisor::mod(const float x, const float y)
 {
-    const auto a = std::fmod(x, y);
+    const auto a = fmodf(x, y);
     const auto b = a + y;
-    return std::fmod(b, y);
+    return fmodf(b, y);
 }

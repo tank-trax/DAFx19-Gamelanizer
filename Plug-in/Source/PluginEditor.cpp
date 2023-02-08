@@ -44,7 +44,7 @@ GamelanizerAudioProcessorEditor::GamelanizerAudioProcessorEditor(GamelanizerAudi
     // TODO Async?
     aboutButton.onClick = [this]
     {
-        AlertWindow::showMessageBox(AlertWindow::QuestionIcon, "About",
+        AlertWindow::showMessageBoxAsync(AlertWindow::QuestionIcon, "About",
                                     "Gamelanizer " + String(JucePlugin_VersionString) +
                                     ", made by Luke M. Craig for DAFx19.\n"
                                     + "Code repo available at\n"
